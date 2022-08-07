@@ -1,4 +1,6 @@
 public class Num91 {
+
+
     public int numDecodings(String s) {
         int numLength = s.length();
         char[] numArray = s.toCharArray();
