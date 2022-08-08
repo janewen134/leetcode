@@ -68,11 +68,27 @@ def numDecodings(s: str) -> int:
             f[i] += f[i - 2]
     return f[n]
 
-
+def mySqrt(a: int) -> int:
+    if(a == 0 or a == 1):
+        return a
+    l,r, mid, sqrt = 1, a, 0, 0
+    while(l <= r):
+        mid = l + (r - l)//2
+        sqrt = a // mid
+        # print(sqrt)
+        if (sqrt == mid):
+            return mid
+        elif (mid > sqrt):
+            r = mid - 1
+        else:
+            l = mid + 1
+        
+    return r
 
 
 if __name__ == "__main__":
     # a = climb_stairs2(5)
     # a = rob_house([1])
-    a = numDecodings("226")
+    # a = numDecodings("226")
+    a = mySqrt(16)
     print(a)
